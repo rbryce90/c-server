@@ -38,7 +38,17 @@ int main(void) {
       perror("accept");
       continue;
     }
+
+    const char *response = "HTTP/1.1 200 OK\r\n"
+                           "Content-Type: text/plain\r\n"
+                           "Content-Length: 11\r\n"
+                           "\r\n"
+                           "Hello World";
+
+    write(client_fd, response, strlen(response));
+
     printf("Client Connected\n");
+
     close(client_fd);
   }
 
