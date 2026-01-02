@@ -5,9 +5,15 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+#define PORT 8080
+
+void handle_response() {}
+
+void handle_request() {}
+
 int main(void) {
-  int PORT = 8080;
   int server_fd = socket(AF_INET, SOCK_STREAM, 0);
+
   if (server_fd < 0) {
     perror("socket");
     return 1;
